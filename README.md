@@ -8,5 +8,6 @@
 - Django
 
 # 数据集
-｜数据集｜地址｜
-｜国家一级保护动物一级一二三等数据集｜https://aistudio.baidu.com/datasetdetail/127411｜
+|数据集|地址|
+|---|---|
+|国家一级保护动物一级一二三等数据集|https://aistudio.baidu.com/datasetdetail/127411|
