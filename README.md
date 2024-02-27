@@ -3,7 +3,6 @@
 - [Animals\_AI\_detection](#animals_ai_detection)
 - [1 产品构建](#1-产品构建)
   - [前端](#前端)
-  - [1. 前端](#1-前端)
     - [1.1. 后端](#11-后端)
     - [1.2. 数据集](#12-数据集)
 - [2 项目流程](#2-项目流程)
@@ -29,7 +28,6 @@
 【金山文档】 团队创建报告(模板)
 https://kdocs.cn/l/ciVBb0IdVrRg
 
-<<<<<<< HEAD
 【金山文档】 产品待办列表（总需求）
 https://kdocs.cn/l/cmGLx2qCiyne
 
@@ -37,9 +35,7 @@ https://kdocs.cn/l/cmGLx2qCiyne
 https://kdocs.cn/l/ck3DnTmOwYYd
 
 ## 前端
-=======
-##  1. <a name=''></a>前端
->>>>>>> 99cb6cd (添加目录)
+
 
 - Vue、Django
 
