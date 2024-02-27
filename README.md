@@ -8,6 +8,12 @@
 【金山文档】 团队创建报告(模板)
 https://kdocs.cn/l/ciVBb0IdVrRg
 
+【金山文档】 产品待办列表（总需求）
+https://kdocs.cn/l/cmGLx2qCiyne
+
+【金山文档】 Spint待办列表
+https://kdocs.cn/l/ck3DnTmOwYYd
+
 ## 前端
 
 - Vue、Django
