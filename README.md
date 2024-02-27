@@ -1,3 +1,16 @@
+<!-- vscode-markdown-toc -->
+* 1. [前端](#)
+	* 1.1. [后端](#-1)
+	* 1.2. [数据集](#-1)
+* 2. [2.1 确定产品](#-1)
+* 3. [2.2 产品功能](#-1)
+* 4. [week1：](#week1)
+	* 4.1. [周一晚上前：团队创建报告发邮箱](#-1)
+	* 4.2. [周二中午前：产品代办列表](#-1)
+	* 4.3. [周二下午：团队会议](#-1)
+* 5. [week2：](#week2)
+* 6. [week3：](#week3)
+
 # Animals_AI_detection
 队名：对对队
 
@@ -8,6 +21,7 @@
 【金山文档】 团队创建报告(模板)
 https://kdocs.cn/l/ciVBb0IdVrRg
 
+<<<<<<< HEAD
 【金山文档】 产品待办列表（总需求）
 https://kdocs.cn/l/cmGLx2qCiyne
 
@@ -15,14 +29,17 @@ https://kdocs.cn/l/cmGLx2qCiyne
 https://kdocs.cn/l/ck3DnTmOwYYd
 
 ## 前端
+=======
+##  1. <a name=''></a>前端
+>>>>>>> 99cb6cd (添加目录)
 
 - Vue、Django
 
-### 后端
+###  1.1. <a name='-1'></a>后端
 
 - Django
 
-### 数据集
+###  1.2. <a name='-1'></a>数据集
 
 |数据集|地址|
 |---|---|
@@ -34,7 +51,7 @@ https://kdocs.cn/l/ck3DnTmOwYYd
 
 
 
-## 2.1 确定产品
+##  2. <a name='-1'></a>2.1 确定产品
 
 1. 确定用户：
 2. 平台样式：
@@ -42,7 +59,7 @@ https://kdocs.cn/l/ck3DnTmOwYYd
 
 
 
-## 2.2 产品功能
+##  3. <a name='-1'></a>2.2 产品功能
 
 1. 草图模式
 
@@ -53,11 +70,11 @@ https://kdocs.cn/l/ck3DnTmOwYYd
 
 # DDL
 
-## week1：
-### 周一晚上前：团队创建报告发邮箱
+##  4. <a name='week1'></a>week1：
+###  4.1. <a name='-1'></a>周一晚上前：团队创建报告发邮箱
 - sheng_13@163.com 和 lishaojing@easthome.com
 
-### 周二中午前：产品代办列表
+###  4.2. <a name='-1'></a>周二中午前：产品代办列表
 
 一、项目整体需求分析和范围确认（今天2/26）
 1. 确认做什么样的产品:
@@ -81,7 +98,7 @@ https://kdocs.cn/l/ck3DnTmOwYYd
    
 三、定义需求优先级
 
-### 周二下午：团队会议
+###  4.3. <a name='-1'></a>周二下午：团队会议
 Scrum流程中，Scrum框架，每个迭代周期称为Sprint。
 
 前期：确认项目范围、创建产品待办列表
@@ -129,10 +146,10 @@ Scrum流程中，Scrum框架，每个迭代周期称为Sprint。
 
 总结：需要填写产品待办列表（总需求）和Spint待办列表。
 
-## week2：
+##  5. <a name='week2'></a>week2：
 - 
 
-## week3：
+##  6. <a name='week3'></a>week3：
 - 
 
 
