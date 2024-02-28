@@ -1,6 +1,7 @@
 <!-- TOC -->
 
 - [Animals\_AI\_detection](#animals_ai_detection)
+- [0 知识学习](#0-知识学习)
 - [1 产品构建](#1-产品构建)
   - [1.1 前端](#11-前端)
   - [1.2后端](#12后端)
@@ -27,6 +28,9 @@
 题目：野趣识别---野生动物物种识别
 
 队名：对对队
+
+# 0 知识学习
+【菜鸟教程-Django】https://www.runoob.com/django/django-first-app.html
 
 # 1 产品构建
 【金山文档】 技术问题共享文档
