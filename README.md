@@ -29,8 +29,16 @@
 
 队名：对对队
 
+
+
 # 0 知识学习
 【菜鸟教程-Django】https://www.runoob.com/django/django-first-app.html
+
+【Marktext工具】https://github.com/marktext/marktext
+
+
+
+
 
 # 1 产品构建
 【金山文档】 技术问题共享文档
@@ -53,14 +61,20 @@ https://kdocs.cn/l/ctoITEB8vqaa
 【金山文档】 项目经理日报(模板)
 https://kdocs.cn/l/cfgSzn33B46a
 
+
+
 ## 1.1 前端
 
 
 - Vue、Django
 
+
+
 ## 1.2后端
 
 - Django
+
+
 
 ## 1.3 数据集
 
@@ -90,6 +104,8 @@ https://kdocs.cn/l/cfgSzn33B46a
 
 - 工具：墨刀
 
+
+
 # DDL
 
 
@@ -103,7 +119,10 @@ https://kdocs.cn/l/cfgSzn33B46a
 ##  week1：
 
 ###  周一晚上前：团队创建报告发邮箱
+
 - sheng_13@163.com 和 lishaojing@easthome.com
+
+
 
 ###  周二中午前：产品代办列表
 
@@ -132,6 +151,8 @@ https://kdocs.cn/l/cfgSzn33B46a
    
 
 三、定义需求优先级
+
+
 
 ###  周二下午：团队会议
 Scrum流程中，Scrum框架，每个迭代周期称为Sprint。
@@ -181,6 +202,8 @@ Scrum流程中，Scrum框架，每个迭代周期称为Sprint。
 
 总结：需要填写产品待办列表（总需求）和Spint待办列表。
 
+
+
 ### 周二下午培训：项目管理（简单风险追踪表）
 
 项目管理：一个团队使用一定的规则保证项目顺利实施。
@@ -204,6 +227,8 @@ Scrum流程中，Scrum框架，每个迭代周期称为Sprint。
        - 如 快速学习小程序开发、同类程序源代码、使用框架开发
        - 如 云端备份
 
+
+
 ### 周三上午宣讲：实训平台
 http://training.easthome.com/ 登录：手机号+123456
 
@@ -214,6 +239,8 @@ http://training.easthome.com/ 登录：手机号+123456
 产品经理
 - 创建需求
 - 添加任务（每个人都有权限）
+
+
 
 ### 周三任务
 
