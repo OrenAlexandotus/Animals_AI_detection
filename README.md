@@ -201,11 +201,11 @@ http://training.easthome.com/ 登录：手机号+123456
 ### 每日任务：项目经理日报
 
 ### 周三任务
-1. 站立会议(daily routine)
+1. 站立会议(Daily routine)
 2. 需求创建
 3. 确定本阶段要完成的需求
 4. sprint1对应需求的任务创建
-5. 24：00前提交日报(daily routine)
+5. 24：00前提交日报(Daily routine)
 ##  week2：
 - 
 
