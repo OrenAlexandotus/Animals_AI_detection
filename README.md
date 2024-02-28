@@ -29,6 +29,9 @@
 队名：对对队
 
 # 1 产品构建
+【金山文档】 技术问题共享文档
+https://kdocs.cn/l/cvrWxEknCpPI
+
 http://training.easthome.com/ 登录：手机号+123456
 
 【金山文档】 团队创建报告(模板)
