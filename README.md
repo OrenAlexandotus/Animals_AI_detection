@@ -175,13 +175,13 @@ Scrum流程中，Scrum框架，每个迭代周期称为Sprint。
       - 较好情况：150人时
    2. 按优先级对**产品待办列表**中的用户故事排序
    3. 按优先级依次对多个**用户故事**进行分解：完成一个用户故事，需要团队做哪些步骤：每个步骤分为一个任务
-      - **任务**1：**设计**一个xxx页面
+      - 任务1：设计一个xxx页面
         - 细节：该页面的目的是，让xxx；
         - 估算时长：2人时
-      - 任务2：**实现**xxx页面的创建
+      - 任务2：实现xxx页面的创建
         - 细节：技术特点
         - 估算时长：1人时
-      - 任务3：**学习**xxx
+      - 任务3：学习xxx
         - 细节：学习xxx
         - 估算时长：3人时
       - 任务4：设计和实现xxx数据模型
@@ -251,19 +251,33 @@ http://training.easthome.com/ 登录：手机号+123456
 
 ### 周三任务
 
-|              任务               | 完成状况 |
-| :-----------------------------: | :------: |
-|     站立会议(Daily routine)     |          |
-|            需求创建             |          |
-|     确定本阶段要完成的需求      |          |
-|    sprint1对应需求的任务创建    |          |
-| 24：00前提交日报(daily routine) |          |
+|              任务               |      完成状况      |
+| :-----------------------------: | :----------------: |
+|     站立会议(Daily routine)     | :white_check_mark: |
+|            需求创建             | :white_check_mark: |
+|     确定本阶段要完成的需求      | :white_check_mark: |
+|    sprint1对应需求的任务创建    | :white_check_mark: |
+| 24：00前提交日报(daily routine) | :white_check_mark: |
 
 ##  week2：
 - 
 
 ##  week3：
+
 - 
 
 
+
+
+
+| Description                         | Checkmark               |
+| ----------------------------------- | ----------------------- |
+| HTML Entity: check mark             | &check;                 |
+| HTML Entity: heavy check mark       | &#10004;                |
+| HTML Entity: ballot box with check  | &#9745;                 |
+| HTML Entity: ballot box with x      | &#9746;                 |
+| HTML Entity: ballot box (unchecked) | &#9744;                 |
+| Emoji: heavy check mark             | :heavy_check_mark:      |
+| Emoji: ballot box with check        | :ballot_box_with_check: |
+| Emoji: white check mark             | :white_check_mark:      |
 
