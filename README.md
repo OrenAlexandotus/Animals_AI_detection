@@ -44,7 +44,13 @@
 【金山文档】 技术问题共享文档
 https://kdocs.cn/l/cvrWxEknCpPI
 
+【金山文档】 项目经理日报(模板)
+https://kdocs.cn/l/cfgSzn33B46a
+
 【实训网站】http://training.easthome.com/ 登录：手机号+123456
+
+【墨刀】
+https://modao.cc/invite_member/di5Q0WNT7ayA3re5RYkhn5gmTyyXAX4M?tsi=aW50cm9fbGluaw==#"对对队"的小伙伴等待你的到来，点击链接即可加入！
 
 【金山文档】 团队创建报告(模板)
 https://kdocs.cn/l/ciVBb0IdVrRg
@@ -58,8 +64,7 @@ https://kdocs.cn/l/ck3DnTmOwYYd
 【金山文档】 简单风险追踪
 https://kdocs.cn/l/ctoITEB8vqaa
 
-【金山文档】 项目经理日报(模板)
-https://kdocs.cn/l/cfgSzn33B46a
+
 
 
 
