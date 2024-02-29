@@ -272,23 +272,31 @@
 <body>
     <div class="shell">
         <div class="container a-container" id="a-container">
-            <form action="" method="" class="form" id="a-form">
+            <form method="post" action="http://127.0.0.1:8000/register/" class="form" id="a-form">
+                {% csrf_token %}
                 <h2 class="form_title title">创建账号</h2>
-                <input type="text" class="form_input" placeholder="学号">
-                <input type="password" class="form_input" placeholder="密码">
-                <input type="password" class="form_input" placeholder="确认密码">
-                <button class="form_button button submit">注册</button>
+                <input name="id" type="text" class="form_input" placeholder="账号">
+                <input name="pw1" type="password" class="form_input" placeholder="密码">
+                <input name="pw2" type="password" class="form_input" placeholder="确认密码">
+                {% if error_msg %}
+                <div class="error-message">{{ error_msg }}</div>
+                {% endif %}
+                <button type="submit" class="form_button button submit">注册</button>
             </form>
         </div>
 
         <div class="container b-container" id="b-container">
-            <form action="" method="" class="form" id="b-form">
+            <form method="post" class="form" id="b-form">
+                {% csrf_token %}
                 <h2 class="form_title title">登入账号</h2>
-                <input type="text" class="form_input" placeholder="学号">
-                <input type="password" class="form_input" placeholder="密码">
+                <input name="id" type="text" class="form_input" placeholder="账号">
+                <input name="pw" type="password" class="form_input" placeholder="密码">
                 <a class="form_link" href="reset">忘记密码？</a>
                 <a class="form_link" href="find">找回密码？</a>
-                <button class="form_button button submit">登录</button>
+                {% if error_msg %}
+                <div class="error-message">{{ error_msg }}</div>
+                {% endif %}
+                <button type="submit" class="form_button button submit">登录</button>
             </form>
         </div>
 
@@ -321,7 +329,7 @@
     let bContainer = document.querySelector("#b-container");
     let allButtons = document.querySelectorAll(".submit");
 
-    let getButtons = (e) => e.preventDefault()
+    //let getButtons = (e) => e.preventDefault()
     let changeForm = (e) => {
         // 修改类名
         switchCtn.classList.add("is-gx");
@@ -340,8 +348,8 @@
     }
     // 点击切换
     let shell = (e) => {
-        for (var i = 0; i < allButtons.length; i++)
-            allButtons[i].addEventListener("click", getButtons);
+        //for (var i = 0; i < allButtons.length; i++)
+            //allButtons[i].addEventListener("click", getButtons);
         for (var i = 0; i < switchBtn.length; i++)
             switchBtn[i].addEventListener("click", changeForm)
     }
