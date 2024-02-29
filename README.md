@@ -36,7 +36,9 @@
 
 【Marktext工具】https://github.com/marktext/marktext
 
+【2022 B站最详细django3教程(django从入门到实践)】 https://www.bilibili.com/video/BV1NL41157ph
 
+【Django官方文档】https://docs.djangoproject.com/zh-hans/5.0/
 
 
 
@@ -44,7 +46,13 @@
 【金山文档】 技术问题共享文档
 https://kdocs.cn/l/cvrWxEknCpPI
 
+【金山文档】 项目经理日报(模板)
+https://kdocs.cn/l/cfgSzn33B46a
+
 【实训网站】http://training.easthome.com/ 登录：手机号+123456
+
+【墨刀】
+https://modao.cc/invite_member/di5Q0WNT7ayA3re5RYkhn5gmTyyXAX4M?tsi=aW50cm9fbGluaw==#"对对队"的小伙伴等待你的到来，点击链接即可加入！
 
 【金山文档】 团队创建报告(模板)
 https://kdocs.cn/l/ciVBb0IdVrRg
@@ -57,9 +65,6 @@ https://kdocs.cn/l/ck3DnTmOwYYd
 
 【金山文档】 简单风险追踪
 https://kdocs.cn/l/ctoITEB8vqaa
-
-【金山文档】 项目经理日报(模板)
-https://kdocs.cn/l/cfgSzn33B46a
 
 
 
@@ -137,7 +142,9 @@ https://kdocs.cn/l/cfgSzn33B46a
          1. 同类产品；
          2. 用户访谈；
    2. 使用工具创建原型 (墨刀)
-   所有成员对最终产品的功能达成一致用户对最终产品功能达成一致
+     所有成员对最终产品的功能达成一致用户对最终产品功能达成一致
+
+
 
 二、创建产品代表列表（明天2/27中午之前）
 主要的内容：
@@ -168,13 +175,13 @@ Scrum流程中，Scrum框架，每个迭代周期称为Sprint。
       - 较好情况：150人时
    2. 按优先级对**产品待办列表**中的用户故事排序
    3. 按优先级依次对多个**用户故事**进行分解：完成一个用户故事，需要团队做哪些步骤：每个步骤分为一个任务
-      - **任务**1：**设计**一个xxx页面
+      - 任务1：设计一个xxx页面
         - 细节：该页面的目的是，让xxx；
         - 估算时长：2人时
-      - 任务2：**实现**xxx页面的创建
+      - 任务2：实现xxx页面的创建
         - 细节：技术特点
         - 估算时长：1人时
-      - 任务3：**学习**xxx
+      - 任务3：学习xxx
         - 细节：学习xxx
         - 估算时长：3人时
       - 任务4：设计和实现xxx数据模型
@@ -244,19 +251,33 @@ http://training.easthome.com/ 登录：手机号+123456
 
 ### 周三任务
 
-|              任务               | 完成状况 |
-| :-----------------------------: | :------: |
-|     站立会议(Daily routine)     |          |
-|            需求创建             |          |
-|     确定本阶段要完成的需求      |          |
-|    sprint1对应需求的任务创建    |          |
-| 24：00前提交日报(daily routine) |          |
+|              任务               |      完成状况      |
+| :-----------------------------: | :----------------: |
+|     站立会议(Daily routine)     | :white_check_mark: |
+|            需求创建             | :white_check_mark: |
+|     确定本阶段要完成的需求      | :white_check_mark: |
+|    sprint1对应需求的任务创建    | :white_check_mark: |
+| 24：00前提交日报(daily routine) | :white_check_mark: |
 
 ##  week2：
 - 
 
 ##  week3：
+
 - 
 
 
+
+
+
+| Description                         | Checkmark               |
+| ----------------------------------- | ----------------------- |
+| HTML Entity: check mark             | &check;                 |
+| HTML Entity: heavy check mark       | &#10004;                |
+| HTML Entity: ballot box with check  | &#9745;                 |
+| HTML Entity: ballot box with x      | &#9746;                 |
+| HTML Entity: ballot box (unchecked) | &#9744;                 |
+| Emoji: heavy check mark             | :heavy_check_mark:      |
+| Emoji: ballot box with check        | :ballot_box_with_check: |
+| Emoji: white check mark             | :white_check_mark:      |
 
