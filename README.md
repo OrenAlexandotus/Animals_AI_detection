@@ -36,7 +36,7 @@
 
 【Marktext工具】https://github.com/marktext/marktext
 
-
+【2022 B站最详细django3教程(django从入门到实践)】 https://www.bilibili.com/video/BV1NL41157ph
 
 
 
