@@ -246,19 +246,33 @@ http://training.easthome.com/ 登录：手机号+123456
 
 ### 周三任务
 
-|              任务               |            完成状况             |
-| :-----------------------------: | :-----------------------------: |
-|     站立会议(Daily routine)     | <input type="checkbox" checked> |
-|            需求创建             | <input type="checkbox" checked> |
-|     确定本阶段要完成的需求      | <input type="checkbox" checked> |
-|    sprint1对应需求的任务创建    | <input type="checkbox" checked> |
-| 24：00前提交日报(daily routine) | <input type="checkbox" checked> |
+|              任务               |      完成状况      |
+| :-----------------------------: | :----------------: |
+|     站立会议(Daily routine)     | :white_check_mark: |
+|            需求创建             | :white_check_mark: |
+|     确定本阶段要完成的需求      | :white_check_mark: |
+|    sprint1对应需求的任务创建    | :white_check_mark: |
+| 24：00前提交日报(daily routine) | :white_check_mark: |
 
 ##  week2：
 - 
 
 ##  week3：
+
 - 
 
 
+
+
+
+| Description                         | Checkmark               |
+| ----------------------------------- | ----------------------- |
+| HTML Entity: check mark             | &check;                 |
+| HTML Entity: heavy check mark       | &#10004;                |
+| HTML Entity: ballot box with check  | &#9745;                 |
+| HTML Entity: ballot box with x      | &#9746;                 |
+| HTML Entity: ballot box (unchecked) | &#9744;                 |
+| Emoji: heavy check mark             | :heavy_check_mark:      |
+| Emoji: ballot box with check        | :ballot_box_with_check: |
+| Emoji: white check mark             | :white_check_mark:      |
 
