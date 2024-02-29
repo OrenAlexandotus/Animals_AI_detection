@@ -38,6 +38,8 @@
 
 【2022 B站最详细django3教程(django从入门到实践)】 https://www.bilibili.com/video/BV1NL41157ph
 
+【Django官方文档】https://docs.djangoproject.com/zh-hans/5.0/
+
 
 
 # 1 产品构建
@@ -63,8 +65,6 @@ https://kdocs.cn/l/ck3DnTmOwYYd
 
 【金山文档】 简单风险追踪
 https://kdocs.cn/l/ctoITEB8vqaa
-
-
 
 
 
