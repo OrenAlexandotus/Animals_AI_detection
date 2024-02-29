@@ -18,8 +18,6 @@ def login(request):
     return render(request, 'login.html', {"error_msg": "用户名或密码错误！请重试"})
 
 def register(request):
-    # if request.method == "GET":
-    #     return render(request, 'login.html')
     name = request.POST.get("id")
     pw1 = request.POST.get("pw1")
     pw2 = request.POST.get("pw2")
