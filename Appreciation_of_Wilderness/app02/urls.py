@@ -1,7 +1,7 @@
 from django.urls import path
-
-from . import views
+from .views import upload_image, upload_success, index
 
 urlpatterns = [
-    path("01/", views.index, name="测试"),
+    path("upload/", upload_image, name='upload_image'),
+    path("upload/success/", upload_success, name='upload_success'),
 ]

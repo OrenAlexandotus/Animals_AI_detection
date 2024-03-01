@@ -24,5 +24,5 @@ urlpatterns = [
     path('init/', views.init),
     path('reset/', views.reset),
     # path('find/', views.find),
-    path("index/", include("app02.urls")),
+    path("", include("app02.urls")),
 ]
