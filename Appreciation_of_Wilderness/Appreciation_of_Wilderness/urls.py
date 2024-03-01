@@ -23,5 +23,5 @@ urlpatterns = [
     path('register/', views.register),
     path('init/', views.init),
     path('reset/', views.reset),
-    path('find/', views.find),
+    # path('find/', views.find),
 ]
