@@ -2,11 +2,28 @@ import base64
 import datetime
 import random
 import time
+import requests
 
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect, HttpResponse
 
 # Create your views here.
+
+def proc(path):
+    '''
+    动物识别
+    '''
+    request_url = "https://aip.baidubce.com/rest/2.0/image-classify/v1/animal"
+    # 二进制方式打开图片所属的[本地文件]
+    f = open(path, 'rb')
+    img = base64.b64encode(f.read())
+    params = {"image":img}
+    access_token = '[24.6c21532002858e202d2f3fd3a495c4de.2592000.1711961933.282335-54400539]'
+    request_url = request_url + "?access_token=" + access_token
+    headers = {'content-type': 'application/x-www-form-urlencoded'}
+    response = requests.post(request_url, data=params, headers=headers)
+    if response:
+        print (response.json())
 
 def index(request):
     return render(request, "./upload_image.html")
@@ -35,4 +52,5 @@ def img_proc(request):
             # 就是为了节省内存空间。
             for data in upload_img.chunks():
                 f.write(data)
-    return render(request, 'upload_image.html')
+        result = proc(upload_url)
+    return render(request, 'upload_image.html', result)
