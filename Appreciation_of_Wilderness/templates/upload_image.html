@@ -86,37 +86,6 @@
                         </div>
                 </div>
             </div>
-            <div class="list" style="padding: 15px; display: none">
-                <div class="layui-row">
-                    <div class="layui-col-md4">
-                        <form method="POST" action="/face_detect/" enctype="multipart/form-data">
-                            {% csrf_token %}
-                            <input type="file" id="file3" name="img" onchange="changepic3(this)"
-                                accept="image/png, image/jpeg, image/jpg">
-                            <img src="" id="show3" width="200">
-                            <button type="submit" class="layui-btn btn1">
-                                <i class="layui-icon">&#xe67c;上传图片3</i>
-                            </button>
-                        </form>
-                </div>
-            </div>
-        </div>
-            <div class="list" style="padding: 15px; display: none">
-                <div class="layui-row">
-                    <div class="layui-col-md4">
-                        <form method="POST" action="/face_draw/" enctype="multipart/form-data">
-                            {% csrf_token %}
-                            <input type="file" id="file4" name="img" onchange="changepic4(this)"
-                                accept="image/png, image/jpeg, image/jpg">
-                            <img src="" id="show4" width="200">
-                            <button type="submit" class="layui-btn btn1">
-                                <i class="layui-icon">&#xe67c;上传图片4</i>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-
-            </div>
             {% if result %}
             <div>
                 {{ result }}
