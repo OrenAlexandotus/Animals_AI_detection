@@ -17,22 +17,13 @@ def proc(path):
     # 二进制方式打开图片所属的[本地文件]
     f = open(path, 'rb')
     img = base64.b64encode(f.read())
-    #params = {"image":img}
-    params = {
-        "image": img,
-        "top_num": 5,      # 返回预测得分top结果数设置为5
-        "baike_num": 4     # 返回百科信息数量设置为5
-    }
+    params = {"image":img}
     access_token = '[24.6c21532002858e202d2f3fd3a495c4de.2592000.1711961933.282335-54400539]'
     request_url = request_url + "?access_token=" + access_token
     headers = {'content-type': 'application/x-www-form-urlencoded'}
     response = requests.post(request_url, data=params, headers=headers)
     if response:
         print (response.json())
-        data = response.json()
-        if 'description' in data:
-            description = data['description']
-            print(description)
     return response
 
 def index(request):
