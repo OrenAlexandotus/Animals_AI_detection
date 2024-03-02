@@ -24,6 +24,7 @@ def proc(path):
     response = requests.post(request_url, data=params, headers=headers)
     if response:
         print (response.json())
+    return response
 
 def index(request):
     return render(request, "./upload_image.html")
@@ -53,4 +54,4 @@ def img_proc(request):
             for data in upload_img.chunks():
                 f.write(data)
         result = proc(upload_url)
-    return render(request, 'upload_image.html', result)
+    return render(request, 'upload_image.html', result.json())
