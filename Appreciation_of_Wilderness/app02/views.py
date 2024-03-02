@@ -33,6 +33,7 @@ def proc(path):
         if 'description' in data:
             description = data['description']
             print(description)
+    return response
 
 def index(request):
     return render(request, "./upload_image.html")
@@ -62,4 +63,4 @@ def img_proc(request):
             for data in upload_img.chunks():
                 f.write(data)
         result = proc(upload_url)
-    return render(request, 'upload_image.html', result)
+    return render(request, 'upload_image.html', result.json())
