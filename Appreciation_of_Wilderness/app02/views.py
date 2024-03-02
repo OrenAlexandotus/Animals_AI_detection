@@ -20,7 +20,7 @@ def proc(path):
     #params = {"image":img}
     params = {
         "image": img,
-        "top_num": 5,      # 返回预测得分top结果数设置为5
+        "top_num": 1,      # 返回预测得分top结果数设置为5
         "baike_num": 4     # 返回百科信息数量设置为5
     }
     access_token = '[24.6c21532002858e202d2f3fd3a495c4de.2592000.1711961933.282335-54400539]'
@@ -28,11 +28,19 @@ def proc(path):
     headers = {'content-type': 'application/x-www-form-urlencoded'}
     response = requests.post(request_url, data=params, headers=headers)
     if response:
-        print (response.json())
-        data = response.json()
-        if 'description' in data:
-            description = data['description']
-            print(description)
+        response_json = response.json()
+        if 'result' in response_json:
+            for result in response_json['result']:
+                name = result['name']  # 动物名称
+                score = str(round(float(result['score']) * 100, 2)) + '%'  # 置信度转换为百分比
+                baike_info = result.get('baike_info', {})  # 百科信息
+                baike_url = baike_info.get('baike_url', 'No baike URL')  # 百科页面链接
+                description = baike_info.get('description', 'No description')  # 百科描述
+                print(f"动物名: {name}, 相似度: {score}, 动物简介: {baike_url}, Description: {description}")
+        else:
+            print("No result in response.")
+    else:
+        print("Request failed.")
     return response
 
 def index(request):
