@@ -24,5 +24,6 @@ urlpatterns = [
     path('init/', views.init),
     path('reset/', views.reset),
     # path('find/', views.find),
+    # app02的测试代码
     path("", include("app02.urls")),
 ]
