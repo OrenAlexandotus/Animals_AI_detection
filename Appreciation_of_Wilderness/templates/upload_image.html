@@ -67,19 +67,6 @@
                             <button type="submit" class="layui-btn btn1">
                                 <i class="layui-icon">&#xe67c;上传图片1</i>
                             </button>
-
-                            <table id="dogDataTable">
-                                <thead>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Score</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <!-- Data will be inserted here dynamically -->
-                                </tbody>
-                            </table>
-
                         </form>
                     </div>
                 </div>
@@ -94,16 +81,55 @@
                         </div>
                 </div>
             </div>
-            {% if result %}
-            <div>
-                {{ result }}
-            </div>
+            {% if data %}
+                
+                <div>
+                    <table class="layui-table">
+                        <colgroup>
+                          <col width="150">
+                          <col width="200">
+                          <col>
+                        </colgroup>
+                        <thead>
+                          <tr>
+                            <th>可能物种</th>
+                            <th>可能性</th>
+                          </tr> 
+                        </thead>
+                        {% for iten in data %}
+                        <tbody id="tableData">
+                        </tbody>
+                        {% endfor %}
+                      </table>
+                </div>
+                
             {% endif %}
         </div>
     <div class="layui-footer">
         <!-- 底部固定区域 -->
         底部固定区域
     </div>
+    <script type="text/javascript">
+        let jsonData = data
+
+        // 获取表格数据容器
+        var tableData = document.getElementById("tableData");
+
+        // 遍历 JSON 数据，将每个对象的属性值填充到表格中
+        for (var i = 0; i < jsonData.length; i++) {
+        var row = "<tr>" +
+                    "<td>" + jsonData[i].name + "</td>" +
+                    "<td>" + jsonData[i].score + "</td>" +
+                    "</tr>";
+        tableData.innerHTML += row;
+        }
+        // layui表格渲染
+        layui.use('table', function(){
+            var table = layui.table;
+            table.init('table');
+        });
+
+    </script>
     <script>
         function changepic1() {
             var reads = new FileReader();

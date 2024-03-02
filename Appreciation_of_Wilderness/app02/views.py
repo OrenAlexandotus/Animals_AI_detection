@@ -54,4 +54,5 @@ def img_proc(request):
             for data in upload_img.chunks():
                 f.write(data)
         result = proc(upload_url)
-    return render(request, 'upload_image.html', result.json())
+        
+    return render(request, 'upload_image.html', {'data': result.json().result})
