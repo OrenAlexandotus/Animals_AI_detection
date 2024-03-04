@@ -82,22 +82,24 @@
                 </div>
             </div>
             {% if data %}
-                
                 <div>
                     <table class="layui-table">
                         <colgroup>
                           <col width="150">
                           <col width="200">
+                          <col width="300">
                           <col>
                         </colgroup>
                         <thead>
                           <tr>
                             <th>可能物种</th>
                             <th>可能性</th>
+                            <th>百科信息</th>
                           </tr> 
                         </thead>
                         {% for iten in data %}
                         <tbody id="tableData">
+                            <!-- 数据将通过JavaScript填充 -->
                         </tbody>
                         {% endfor %}
                       </table>
@@ -109,27 +111,49 @@
         <!-- 底部固定区域 -->
         欢迎来到野趣识别！
     </div>
-    <script type="text/javascript">
-        let jsonData = data
 
+    <script type="text/javascript">
+        // let jsonData = data
+
+        // // 获取表格数据容器
+        // var tableData = document.getElementById("tableData");
+
+        // // 遍历 JSON 数据，将每个对象的属性值填充到表格中
+        // for (var i = 0; i < jsonData.length; i++) {
+        // var row = "<tr>" +
+        //             "<td>" + jsonData[i].name + "</td>" +
+        //             "<td>" + jsonData[i].score + "</td>" +
+        //             "</tr>";
+        // tableData.innerHTML += row;
+        // }
+        // // layui表格渲染
+        // layui.use('table', function(){
+        //     var table = layui.table;
+        //     table.init('table');
+        // });
+
+        // 假设 data 是从后端传递到模板的 JSON 数据
+        let jsonData = {{ data|safe }};  // 使用 Django 模板标签将 data 变量传递到 JS
         // 获取表格数据容器
         var tableData = document.getElementById("tableData");
-
         // 遍历 JSON 数据，将每个对象的属性值填充到表格中
         for (var i = 0; i < jsonData.length; i++) {
-        var row = "<tr>" +
-                    "<td>" + jsonData[i].name + "</td>" +
-                    "<td>" + jsonData[i].score + "</td>" +
-                    "</tr>";
-        tableData.innerHTML += row;
-        }
+            var baike_info = jsonData[i].baike_info ? jsonData[i].baike_info.description : '无信息';
+            var row = "<tr>" +
+                        "<td>" + jsonData[i].name + "</td>" +
+                        "<td>" + (jsonData[i].score * 100).toFixed(2) + "%" + "</td>" +  // 置信度转换为百分比
+                        "<td>" + baike_info + "</td>" +
+                        "</tr>";
+            tableData.innerHTML += row;
+        }  
         // layui表格渲染
         layui.use('table', function(){
-            var table = layui.table;
-            table.init('table');
-        });
-
+                var table = layui.table;
+                table.init('table');
+        });    
     </script>
+
+
     <script>
         function changepic1() {
             var reads = new FileReader();
