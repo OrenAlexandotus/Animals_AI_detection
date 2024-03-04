@@ -19,6 +19,7 @@
     - [周三上午宣讲：实训平台](#周三上午宣讲实训平台)
     - [周三任务](#周三任务)
   - [week2：](#week2)
+    - [周一 小组汇报](#周一-小组汇报)
   - [week3：](#week3)
 
 <!-- /TOC -->
@@ -50,6 +51,8 @@ https://kdocs.cn/l/cvrWxEknCpPI
 https://kdocs.cn/l/cfgSzn33B46a
 
 【实训网站】http://training.easthome.com/ 登录：手机号+123456
+
+【汇报ppt共享】https://www.canva.cn/design/DAF-gErgZNI/bE3SoABwrsv9ayH-kSrlTQ/edit?utm_content=DAF-gErgZNI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
 【墨刀】
 https://modao.cc/invite_member/di5Q0WNT7ayA3re5RYkhn5gmTyyXAX4M?tsi=aW50cm9fbGluaw==#"对对队"的小伙伴等待你的到来，点击链接即可加入！
@@ -260,7 +263,8 @@ http://training.easthome.com/ 登录：手机号+123456
 | 24：00前提交日报(daily routine) | :white_check_mark: |
 
 ##  week2：
-- 
+### 周一 小组汇报
+
 
 ##  week3：
 
