@@ -51,7 +51,7 @@ https://kdocs.cn/l/cvrWxEknCpPI
 【金山文档】 项目经理日报(模板)
 https://kdocs.cn/l/cfgSzn33B46a
 
-【实训网站】http://training.easthome.com/ 登录：手机号+123456
+【实训网站】http://training.easthome.com/ 登录：手机号+123456(项目经理：手机号+zzzxxx)
 
 【汇报ppt共享】https://www.canva.cn/design/DAF-gErgZNI/bE3SoABwrsv9ayH-kSrlTQ/edit?utm_content=DAF-gErgZNI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
