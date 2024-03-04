@@ -72,4 +72,4 @@ def img_proc(request):
                 f.write(data)
         result = proc(upload_url)
         
-    return render(request, 'upload_image.html', {'data': result.json().result})
+    return render(request, 'upload_image.html', {'data': result.json()['result']})
