@@ -1,3 +1,8 @@
+#创建时间：2024-2-29
+#创建者：曾颂杰
+#修改者：陈昱冰
+#功能：动物识别、显示识别信息
+
 import base64
 import datetime
 import random
@@ -11,7 +16,8 @@ from django.http import HttpResponseRedirect, HttpResponse
 
 def proc(path):
     '''
-    动物识别
+    功能：动物识别，这段代码是调用百度AI的动物识别接口，
+    返回值：识别结果response（动物名、相似度、百科链接、百科描述等）
     '''
     request_url = "https://aip.baidubce.com/rest/2.0/image-classify/v1/animal"
     # 二进制方式打开图片所属的[本地文件]
@@ -47,6 +53,10 @@ def index(request):
     return render(request, "./upload_image.html")
 
 def img_proc(request):
+    '''
+    功能：处理上传的图片的
+    返回值：识别结果（动物名、相似度、百科链接、百科描述）
+    '''
     print(request.POST)
     print(request.FILES)
     if request.method == 'POST':

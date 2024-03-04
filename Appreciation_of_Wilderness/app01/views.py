@@ -1,3 +1,8 @@
+#创建时间：2024-2-28
+#创建者：李心
+#修改者：
+#功能：登录注册、重置密码、跳转页面、错误信息提示
+
 from django.shortcuts import render, redirect
 from app01 import models
 from django.contrib import messages
@@ -7,6 +12,10 @@ def init(request):
     return render(request, 'init.html')
 
 def login(request):
+    '''
+    功能： 登录
+    返回值：登录成功跳转到app02的index视图，登录失败返回登录页面
+    '''
     if request.method == "GET":
         return render(request, 'login.html')
     name = request.POST.get("id")
@@ -14,10 +23,18 @@ def login(request):
     if models.user.objects.filter(id=name).first() is None:
         return render(request, 'login.html', {"error_msg": "未注册！请重试"})
     elif models.user.objects.filter(id=name).first().pw == pwd:
+        # # 如果登录成功，跳转到app02的index视图
+        # return redirect(reverse('app02:index'))  # 使用app的名称和视图名称
         return redirect('http://127.0.0.1:8000/init')
     return render(request, 'login.html', {"error_msg": "用户名或密码错误！请重试"})
 
 def register(request):
+    
+    '''
+    功能： 注册
+    返回值： 注册成功跳转到app02的index视图，注册失败返回注册页面
+    '''
+
     name = request.POST.get("id")
     pw1 = request.POST.get("pw1")#密码
     pw2 = request.POST.get("pw2")#密码确认
@@ -27,10 +44,16 @@ def register(request):
         return render(request, 'login.html', {"error_msg": "用户名或密码为空！请重试"})
     if pw1==pw2:
         models.user.objects.create(id=name,pw=pw1)
+        # # 如果注册成功，跳转到app02的index视图
+        # return redirect(reverse('app02:index'))  # 使用app的名称和视图名称
         return redirect('http://127.0.0.1:8000/init')
     return render(request, 'login.html', {"error_msg": "两次密码不一致！请重试"})
 
 def reset(request):
+    '''
+    功能： 重置密码
+    返回值： 重置成功跳转到app02的index视图，重置失败返回重置页面
+    '''
     if request.method == "GET":
         return render(request, 'reset.html')
     name = request.POST.get("id")#id
@@ -56,3 +79,8 @@ def reset(request):
 #         models.user.objects.filter(id=name).update(pw=pwd1)
 #         return redirect('http://127.0.0.1:8000/init')
 #     return render(request, 'login.html', {"error_msg": "原密码错误！请重试"})
+
+'''
+功能：
+返回值：
+'''

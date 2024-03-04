@@ -1,3 +1,10 @@
+<!-- 
+创建时间：2024-2-29
+创建者：曾颂杰
+修改者：陈昱冰
+功能：图片上传、识别、显示的前端实现
+-->
+
 <!DOCTYPE html>
 <html>
 
@@ -112,26 +119,8 @@
         欢迎来到野趣识别！
     </div>
 
+    
     <script type="text/javascript">
-        // let jsonData = data
-
-        // // 获取表格数据容器
-        // var tableData = document.getElementById("tableData");
-
-        // // 遍历 JSON 数据，将每个对象的属性值填充到表格中
-        // for (var i = 0; i < jsonData.length; i++) {
-        // var row = "<tr>" +
-        //             "<td>" + jsonData[i].name + "</td>" +
-        //             "<td>" + jsonData[i].score + "</td>" +
-        //             "</tr>";
-        // tableData.innerHTML += row;
-        // }
-        // // layui表格渲染
-        // layui.use('table', function(){
-        //     var table = layui.table;
-        //     table.init('table');
-        // });
-
         // 假设 data 是从后端传递到模板的 JSON 数据
         let jsonData = {{ data|safe }};  // 使用 Django 模板标签将 data 变量传递到 JS
         // 获取表格数据容器
