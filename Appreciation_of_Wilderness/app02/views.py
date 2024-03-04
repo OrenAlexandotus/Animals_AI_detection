@@ -1,6 +1,6 @@
 #创建时间：2024-2-29
 #创建者：曾颂杰
-#修改者：陈昱冰
+#修改者：陈昱冰,张齐豫
 #功能：动物识别、显示识别信息
 
 import base64
@@ -82,4 +82,4 @@ def img_proc(request):
                 f.write(data)
         result = proc(upload_url)
         
-    return render(request, 'upload_image.html', {'data': result.json()['result']})
+    return render(request, 'upload_image.html', {'image_url':"/"+upload_url,'data': result.json()['result']})

@@ -82,7 +82,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'duiduidui',
         'USER': 'root',
-        'PASSWORD': 'sherlock4869',     #修改自己的密码
+        'PASSWORD': 'root',     #修改自己的密码
         'HOST': '127.0.0.1',
         'PORT': '3306'              #和端口
     }
