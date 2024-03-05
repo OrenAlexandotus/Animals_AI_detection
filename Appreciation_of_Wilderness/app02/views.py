@@ -27,7 +27,7 @@ def proc(path):
     params = {
         "image": img,
         "top_num": 1,      # 返回预测得分top结果数设置为5
-        "baike_num": 4     # 返回百科信息数量设置为5
+        "baike_num": 3  # 返回百科信息数量设置为5
     }
     access_token = '[24.6c21532002858e202d2f3fd3a495c4de.2592000.1711961933.282335-54400539]'
     request_url = request_url + "?access_token=" + access_token
@@ -52,6 +52,16 @@ def proc(path):
 def index(request):
     return render(request, "./upload_image.html")
 
+# 注销
+def logout(request):
+    if request.method == 'GET':
+        # 删除用户session
+        # del request.session['uname']
+        response = HttpResponseRedirect('/')
+        # response.delete_cookie('ticket')
+        # 返回响应体
+        return response
+    
 def img_proc(request):
     '''
     功能：处理上传的图片的
