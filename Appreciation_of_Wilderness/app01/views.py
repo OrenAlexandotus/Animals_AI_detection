@@ -25,7 +25,7 @@ def login(request):
     elif models.user.objects.filter(id=name).first().pw == pwd:
         # 如果登录成功，跳转到app02的index视图
         # return redirect('http://127.0.0.1:8000/img_proc/')  # 使用app的名称和视图名称
-        return redirect('http://127.0.0.1:8000/init')
+        return redirect('http://127.0.0.1:8000/index')
     return render(request, 'login.html', {"error_msg": "用户名或密码错误！请重试"})
 
 def register(request):
