@@ -23,7 +23,7 @@ urlpatterns = [
     path('login_u/', views.login_u),
     path('login_a/', views.login_a),
     path('reset/', views.reset),
-    path('init/', views.init),
+    path('admin_init/', views.admin_init),
     # path('find/', views.find),
     # app02的测试代码
     path("", include("app02.urls")),

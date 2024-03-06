@@ -72,10 +72,10 @@ def login_a(request):
         return render(request, 'login_a.html')
     name = request.POST.get("id")
     pwd = request.POST.get("pw")
-    if models.user.objects.filter(id=name).first() is None:
+    if models.admin.objects.filter(id=name).first() is None:
         return render(request, 'login_a.html', {"error_msg": "未注册！请重试"})
-    elif models.user.objects.filter(id=name).first().pw == pwd:
-        return redirect('/init')
+    elif models.admin.objects.filter(id=name).first().pw == pwd:
+        return redirect('/admin_init')
     return render(request, 'login_a.html', {"error_msg": "用户名或密码错误！请重试"})
 
 
@@ -93,6 +93,6 @@ def login_a(request):
 #         return redirect('http://127.0.0.1:8000/init')
 #     return render(request, 'login.html', {"error_msg": "原密码错误！请重试"})
 
-def init(request):
+def admin_init(request):
 
-    return render(request, 'init.html')
+    return render(request, 'admin.html')
