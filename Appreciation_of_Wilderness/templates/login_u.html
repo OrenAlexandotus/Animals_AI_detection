@@ -272,7 +272,7 @@
 <body>
     <div class="shell">
         <div class="container a-container" id="a-container">
-            <form method="post" action="http://127.0.0.1:8000/register_u/" class="form" id="a-form">
+            <form method="post" action="/register_u/" class="form" id="a-form">
                 {% csrf_token %}
                 <h2 class="form_title title">创建账号</h2>
                 <input name="id" type="text" class="form_input" placeholder="账号">
@@ -286,12 +286,12 @@
         </div>
 
         <div class="container b-container" id="b-container">
-            <form method="post" action="http://127.0.0.1:8000/login_u/" class="form" id="b-form">
+            <form method="post" action="" class="form" id="b-form">
                 {% csrf_token %}
                 <h2 class="form_title title">登入账号</h2>
                 <input name="id" type="text" class="form_input" placeholder="账号">
                 <input name="pw" type="password" class="form_input" placeholder="密码">
-                <a class="form_link" href="reset/">忘记密码？</a>
+                <a class="form_link" href="/reset/">忘记密码？</a>
                 {% if error_msg %}
                 <div class="error-message">{{ error_msg }}</div>
                 {% endif %}

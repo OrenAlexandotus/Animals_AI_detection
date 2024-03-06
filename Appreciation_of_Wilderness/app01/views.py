@@ -25,7 +25,7 @@ def login_u(request):
     elif models.user.objects.filter(id=name).first().pw == pwd:
         # 如果登录成功，跳转到app02的index视图
         # return redirect('http://127.0.0.1:8000/img_proc/')  # 使用app的名称和视图名称
-        return redirect('http://127.0.0.1:8000/init')
+        return redirect('/init')
     return render(request, 'login_u.html', {"error_msg": "用户名或密码错误！请重试"})
 
 def register_u(request):
@@ -47,7 +47,7 @@ def register_u(request):
         models.user.objects.create(id=name,pw=pw1)
         # 如果注册成功，跳转到app02的index视图
         # return redirect('http://127.0.0.1:8000/img_proc/')  # 使用app的名称和视图名称
-        return redirect('http://127.0.0.1:8000/init')
+        return redirect('/init')
     return render(request, 'login_u.html', {"error_msg": "两次密码不一致！请重试"})
 
 def reset(request):
@@ -64,7 +64,7 @@ def reset(request):
         return render(request, 'login.html', {"error_msg": "未注册！请重试"})
     elif models.user.objects.filter(id=name).first().pw == pwd0:
         models.user.objects.filter(id=name).update(pw=pwd1)
-        return redirect('http://127.0.0.1:8000/init')
+        return redirect('init')
     return render(request, 'login.html', {"error_msg": "原密码错误！请重试"})
 
 def login_a(request):
@@ -75,7 +75,7 @@ def login_a(request):
     if models.user.objects.filter(id=name).first() is None:
         return render(request, 'login_a.html', {"error_msg": "未注册！请重试"})
     elif models.user.objects.filter(id=name).first().pw == pwd:
-        return redirect('http://127.0.0.1:8000/init')
+        return redirect('/init')
     return render(request, 'login_a.html', {"error_msg": "用户名或密码错误！请重试"})
 
 
