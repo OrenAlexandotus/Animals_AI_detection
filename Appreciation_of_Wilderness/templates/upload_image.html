@@ -15,9 +15,67 @@
     <link rel="stylesheet" href="../static/layui/css/layui.css">
     <style>
         .btn1 {
-            margin-left: 25%;
+            margin-left: 25%; 
         }
-    </style>
+        
+        .filepath {
+            display: none; /* 隐藏默认的文件输入，因为我们将使用自定义按钮 */
+        }
+
+        .upload-btn {
+            background-color: #4CAF50; /* 按钮背景颜色 */
+            color: white; /* 按钮文字颜色 */
+            padding: 12px 24px; /* 按钮内边距 */
+            border: none; /* 去除边框 */
+            border-radius: 4px; /* 圆角边框 */
+            cursor: pointer; /* 鼠标悬停时的指针样式 */
+            font-size: 16px; /* 文字大小 */
+        }
+
+        .upload-btn:hover {
+            background-color: #45a049; /* 鼠标悬停时的按钮背景颜色 */
+        }
+
+        .custom-file-upload {
+            border: 1px solid #ccc;
+            display: inline-block;
+            padding: 6px 12px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-right: 5px; /* 与下一个元素的距离 */
+        }
+
+        .layui-table {
+        border-collapse: separate; /* 用于应用圆角边框 */
+        border-spacing: 0; /* 用于去除单元格间的空隙 */
+        margin: 20px; /* 页边距 */
+        width: calc(100% - 40px); /* 表格宽度，考虑页边距 */
+        background-color: #e8eee8; /* 背景色 */
+        border-radius: 12px; /* 圆角边框 */
+        overflow: hidden; /* 确保圆角效果覆盖子元素 */
+        }
+
+        .layui-table th,
+        .layui-table td {
+            padding: 12px 15px; /* 单元格内边距 */
+            border-bottom: 1px solid #ddd; /* 单元格底部边框 */
+        }
+
+        .layui-table th {
+            background-color: #a1e4bc; /* 表头背景色 */
+            font-weight: bold; /* 标题加粗 */
+            color: #0a1d12; /* 标题字体颜色 */
+            font-family: Arial, sans-serif; /* 修改字体 */
+        }
+
+        .layui-table tr:nth-child(odd) td {
+            background-color: #f4fff1; /* 隔行颜色变化，奇数行颜色 */
+        }
+
+        .layui-table tr:nth-child(even) td {
+            background-color: #f8f8f8; /* 隔行颜色变化，偶数行颜色 */
+        }
+        </style>
 </head>
 
 <body class="layui-layout-body">
@@ -80,10 +138,10 @@
                         <div>
                             <table class="layui-table">
                                 <colgroup>
-                                <col width="50">
-                                <col width="100">
-                                <col width="100">
-                                <col width="500">
+                                    <col width="50">
+                                    <col width="100">
+                                    <col width="100">
+                                    <col width="500">
                                 <col>
                                 </colgroup>
                                 <thead>
@@ -94,11 +152,11 @@
                                     <th>百科信息</th>
                                 </tr> 
                                 </thead>
-                                {% for iten in data %}
                                 <tbody id="tableData">
+                                    {% for iten in data %}
                                     <!-- 数据将通过JavaScript填充 -->
+                                    {% endfor %}
                                 </tbody>
-                                {% endfor %}
                             </table>
                         </div>
                     {% endif %}  
