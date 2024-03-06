@@ -49,7 +49,7 @@ def proc(path):
         print("Request failed.")
     return response
 
-def index(request):
+def upload(request):
     return render(request, "./upload_image.html")
 
 # 注销

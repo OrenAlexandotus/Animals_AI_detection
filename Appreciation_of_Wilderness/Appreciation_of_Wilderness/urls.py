@@ -18,10 +18,12 @@ from django.contrib import admin
 from django.urls import path, include
 from app01 import views
 urlpatterns = [
-    path('', views.login),
-    path('register/', views.register),
-    path('init/', views.init),
+    path('', views.index),
+    path('register_u/', views.register_u),
+    path('login_u/', views.login_u),
+    path('login_a/', views.login_a),
     path('reset/', views.reset),
+    path('init/', views.init),
     # path('find/', views.find),
     # app02的测试代码
     path("", include("app02.urls")),
