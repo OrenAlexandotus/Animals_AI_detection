@@ -80,9 +80,9 @@ WSGI_APPLICATION = "Appreciation_of_Wilderness.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'duiduidui',
+        'NAME': 'django',
         'USER': 'root',
-        'PASSWORD': '123456',     #修改自己的密码
+        'PASSWORD': 'Dui123456',     #修改自己的密码
         'HOST': 'localhost',
         'PORT': '3306'              #和端口
     }
