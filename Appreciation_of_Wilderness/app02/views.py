@@ -26,7 +26,7 @@ def proc(path):
     #params = {"image":img}
     params = {
         "image": img,
-        "top_num": 1,      # 返回预测得分top结果数设置为5
+        "top_num": 3,      # 返回预测得分top结果数设置为5
         "baike_num": 3  # 返回百科信息数量设置为5
     }
     access_token = '[24.6c21532002858e202d2f3fd3a495c4de.2592000.1711961933.282335-54400539]'

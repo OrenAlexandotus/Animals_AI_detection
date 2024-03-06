@@ -66,7 +66,7 @@
             <!-- 内容主体区域 -->
             <div class="list" style="padding: 15px; display: block">
                 <div class="layui-row">
-                    <div class="layui-col-md4">
+                    <div class="layui-col-md16">
                         <form method="POST" action="/img_proc/" enctype="multipart/form-data">
                             {% csrf_token %}
                             <input type="file" id="file1" class="filepath" name="img" onchange="changepic1(this)"
@@ -76,6 +76,32 @@
                                 <i class="layui-icon">&#xe67c;识别图片</i>
                             </button>
                         </form>
+                        {% if data %}
+                        <div>
+                            <table class="layui-table">
+                                <colgroup>
+                                <col width="50">
+                                <col width="100">
+                                <col width="100">
+                                <col width="500">
+                                <col>
+                                </colgroup>
+                                <thead>
+                                <tr>
+                                    <th>序号</th>
+                                    <th>可能物种</th>
+                                    <th>可能性</th>
+                                    <th>百科信息</th>
+                                </tr> 
+                                </thead>
+                                {% for iten in data %}
+                                <tbody id="tableData">
+                                    <!-- 数据将通过JavaScript填充 -->
+                                </tbody>
+                                {% endfor %}
+                            </table>
+                        </div>
+                    {% endif %}  
                     </div>
                 </div>
             </div>
@@ -89,31 +115,7 @@
                         </div>
                 </div>
             </div>
-            {% if data %}
-                <div>
-                    <table class="layui-table">
-                        <colgroup>
-                          <col width="150">
-                          <col width="200">
-                          <col width="300">
-                          <col>
-                        </colgroup>
-                        <thead>
-                          <tr>
-                            <th>可能物种</th>
-                            <th>可能性</th>
-                            <th>百科信息</th>
-                          </tr> 
-                        </thead>
-                        {% for iten in data %}
-                        <tbody id="tableData">
-                            <!-- 数据将通过JavaScript填充 -->
-                        </tbody>
-                        {% endfor %}
-                      </table>
-                </div>
-                
-            {% endif %}
+            
         </div>
     <div class="layui-footer">
         <!-- 底部固定区域 -->
@@ -130,6 +132,7 @@
         for (var i = 0; i < jsonData.length; i++) {
             var baike_info = jsonData[i].baike_info ? jsonData[i].baike_info.description : '无信息';
             var row = "<tr>" +
+                        "<td>" + i + "</td>" +
                         "<td>" + jsonData[i].name + "</td>" +
                         "<td>" + (jsonData[i].score * 100).toFixed(2) + "%" + "</td>" +  // 置信度转换为百分比
                         "<td>" + baike_info + "</td>" +
