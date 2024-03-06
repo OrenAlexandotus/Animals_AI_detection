@@ -84,7 +84,7 @@ DATABASES = {
         'USER': 'root',
         'PASSWORD': '123456',     #修改自己的密码
         'HOST': 'localhost',
-        'PORT': '3307'              #和端口
+        'PORT': '3306'              #和端口
     }
 }
 
