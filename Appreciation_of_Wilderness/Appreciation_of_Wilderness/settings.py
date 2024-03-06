@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-px3=608q0@e$*&c)3nd5gd#hd6-=525fn7t7_nk4vn79)98h#s
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['www.duiduidui-online.sbs']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -82,9 +82,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'duiduidui',
         'USER': 'root',
-        'PASSWORD': 'Dui_123456',     #修改自己的密码
+        'PASSWORD': 'lx200261',     #修改自己的密码
         'HOST': 'localhost',
-        'PORT': '3306'              #和端口
+        'PORT': '3307'              #和端口
     }
 }
 
