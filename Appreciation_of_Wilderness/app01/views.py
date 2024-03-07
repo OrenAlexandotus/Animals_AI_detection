@@ -4,6 +4,10 @@
 #功能：登录注册、重置密码、跳转页面、错误信息提示
 
 from django.shortcuts import render, redirect
+from django.contrib.auth.models import User
+from django.urls import reverse
+from django.contrib.auth import authenticate, login
+from django.contrib import messages
 from app01 import models
 from django.contrib import messages
 # Create your views here.
@@ -20,35 +24,38 @@ def login_u(request):
         return render(request, 'login_u.html')
     name = request.POST.get("id")
     pwd = request.POST.get("pw")
-    if models.user.objects.filter(id=name).first() is None:
-        return render(request, 'login.html', {"error_msg": "未注册！请重试"})
-    elif models.user.objects.filter(id=name).first().pw == pwd:
-        # 如果登录成功，跳转到app02的index视图
-        # return redirect('http://127.0.0.1:8000/img_proc/')  # 使用app的名称和视图名称
+    user = authenticate(request, username=name, password=pwd)
+    if user is not None:
+        login(request,user)
         return redirect('/user_init')
-    return render(request, 'login_u.html', {"error_msg": "用户名或密码错误！请重试"})
+    else:
+        messages.error(request, "用户名或密码错误！请重试")
+        return render(request, 'login_u.html')
 
 def register_u(request):
     
     '''
-    功能： 用户user注册
-    返回值： 注册成功跳转到app02的index视图，注册失败返回注册页面
+    功能：用户user注册
+    返回值：注册成功跳转到app02的index视图，注册失败返回注册页面
     '''
     if request.method == "GET":
+        return render(request, 'login_u.html')  # 注意更正为正确的模板名称
+    username = request.POST.get("id")
+    password1 = request.POST.get("pw1")  # 密码
+    password2 = request.POST.get("pw2")  # 密码确认
+    if User.objects.filter(username=username).exists():
+        messages.error(request, "用户名已被注册！请重试")
         return render(request, 'login_u.html')
-    name = request.POST.get("id")
-    pw1 = request.POST.get("pw1")#密码
-    pw2 = request.POST.get("pw2")#密码确认
-    if models.user.objects.filter(id=name).first():
-        return render(request, 'login_u.html', {"error_msg": "用户名已被注册！请重试"})
-    if name == "" or pw1 == "" or pw2 == "":
-        return render(request, 'login_u.html', {"error_msg": "用户名或密码为空！请重试"})
-    if pw1==pw2:
-        models.user.objects.create(id=name,pw=pw1)
-        # 如果注册成功，跳转到app02的index视图
-        # return redirect('http://127.0.0.1:8000/img_proc/')  # 使用app的名称和视图名称
-        return redirect('/init')
-    return render(request, 'login_u.html', {"error_msg": "两次密码不一致！请重试"})
+    if username == "" or password1 == "" or password2 == "":
+        messages.error(request, "用户名或密码为空！请重试")
+        return render(request, 'login_u.html')
+    if password1 == password2:
+        User.objects.create_user(username=username, password=password1)
+        # 如果注册成功，重定向到初始化页面
+        return redirect('/user_init')  # 使用name来引用URL
+    else:
+        messages.error(request, "两次密码不一致！请重试")
+        return render(request, 'login_u.html')
 
 def reset(request):
     '''
@@ -64,7 +71,7 @@ def reset(request):
         return render(request, 'login.html', {"error_msg": "未注册！请重试"})
     elif models.user.objects.filter(id=name).first().pw == pwd0:
         models.user.objects.filter(id=name).update(pw=pwd1)
-        return redirect('/init')
+        return redirect('/user_init')
     return render(request, 'login.html', {"error_msg": "原密码错误！请重试"})
 
 def login_a(request):
