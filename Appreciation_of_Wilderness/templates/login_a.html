@@ -1,3 +1,11 @@
+<!-- 
+修改时间：2024-3-7
+修改者：陆野
+修改内容：管理员界面按钮颜色、输入框字体大小、解释字体大小  
+-->
+
+
+
 <!DOCTYPE html>
 <html lang="ch-ZN">
 
@@ -92,7 +100,7 @@
             height: 40px;
             margin: 4px 0;
             padding-left: 25px;
-            font-size: 13px;
+            font-size: 16px;
             letter-spacing: 0.15px;
             border: none;
             outline: none;
@@ -143,7 +151,7 @@
             font-weight: 700;
             font-size: 14px;
             letter-spacing: 1.15px;
-            background-color: #9c0000;
+            background-color: rgb(0, 150, 136);
             color: #f9f9f9;
             box-shadow: 8px 8px 16px #d1d9e6, -8px -8px 16px #f9f9f9;
             border: none;
@@ -218,6 +226,9 @@
             transition: 0.25s;
         }
 
+        .switch_description{
+            font-size: 20px;
+        }
         .switch_button:active,
         .switch_button:focus {
             box-shadow: 2px 2px 6px #d1d9e6, -2px -2px 6px #f9f9f9;
@@ -299,7 +310,7 @@
 
             <div class="switch_container is-hidden" id="switch-c2">
                 <h2 class="switch_title title" style="letter-spacing: 0;">欢迎登入</h2>
-                <p class="switch_description description">administer</p>
+                <p class="switch_description description">Welcome!</p>
                 <button class="switch_button button switch-btn">切换</button>
             </div>
         </div>
