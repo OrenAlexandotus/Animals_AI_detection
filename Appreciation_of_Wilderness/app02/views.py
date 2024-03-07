@@ -10,8 +10,6 @@ import time
 import requests
 
 from django.shortcuts import render, redirect
-from django.urls import reverse
-from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse
 
 # Create your views here.
@@ -53,11 +51,6 @@ def proc(path):
 
 def upload(request):
     return render(request, "./user.html")
-
-# 注销
-def logout(request):
-    logout(request)
-    return redirect(reverse('index'))
     
 def img_proc(request):
     '''

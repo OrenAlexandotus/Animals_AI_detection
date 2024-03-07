@@ -23,8 +23,8 @@ urlpatterns = [
     path('register_u/', views.register_u),
     path('login_u/', views.login_u),
     path('login_a/', views.login_a),
-    path('reset/', views.reset),
     path('admin_init/', views.admin_init),
+    path('logout/', views.logout_u,),
     path('user_init/', views.user_init),
     # path('find/', views.find),
     # app02的测试代码
