@@ -6,7 +6,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.urls import reverse
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from app01 import models
 from django.contrib import messages
@@ -36,8 +36,11 @@ def login_u(request):
         return redirect("/user_init")
     else:
         messages.error(request, "用户名或密码错误！请重试")
-        return render(request, "login_u.html")
-
+        return render(request, 'login_u.html')
+# 注销
+def logout_u(request):
+    logout(request)
+    return redirect('/init')
 
 def register_u(request):
     """
@@ -64,24 +67,6 @@ def register_u(request):
         return render(request, "login_u.html")
 
 
-def reset(request):
-    """
-    功能： 重置密码
-    返回值： 重置成功跳转到app02的index视图，重置失败返回重置页面
-    """
-    if request.method == "GET":
-        return render(request, "reset.html")
-    name = request.POST.get("id")  # id
-    pwd0 = request.POST.get("pw0")  # 原密码
-    pwd1 = request.POST.get("pw1")  # 新密码
-    if models.user.objects.filter(id=name).first() is None:
-        return render(request, "login.html", {"error_msg": "未注册！请重试"})
-    elif models.user.objects.filter(id=name).first().pw == pwd0:
-        models.user.objects.filter(id=name).update(pw=pwd1)
-        return redirect("/user_init")
-    return render(request, "login.html", {"error_msg": "原密码错误！请重试"})
-
-
 def login_a(request):
     if request.method == "GET":
         return render(request, "login_a.html")
@@ -92,7 +77,6 @@ def login_a(request):
     elif models.admin.objects.filter(id=name).first().pw == pwd:
         return redirect("/admin_init")
     return render(request, "login_a.html", {"error_msg": "用户名或密码错误！请重试"})
-
 
 # def find(request):
 #     if request.method == "GET":
