@@ -60,41 +60,7 @@
             <div class="list" style="padding: 15px; display: block">
                 <div class="layui-row">
                     <div class="layui-col-md16">
-                        <form method="POST" action="/img_proc/" enctype="multipart/form-data">
-                            {% csrf_token %}
-                            <input type="file" id="file1" class="filepath" name="img" onchange="changepic1(this)"
-                                accept="image/png, image/jpeg, image/jpg">
-                            <img src="{{ image_url }}" id="show1" width="200">
-                            <button type="submit" class="layui-btn btn1">
-                                <i class="layui-icon">&#xe67c;识别图片</i>
-                            </button>
-                        </form>
-                        {% if data %}
-                        <div>
-                            <table class="layui-table">
-                                <colgroup>
-                                <col width="50">
-                                <col width="100">
-                                <col width="100">
-                                <col width="500">
-                                <col>
-                                </colgroup>
-                                <thead>
-                                <tr>
-                                    <th>序号</th>
-                                    <th>可能物种</th>
-                                    <th>可能性</th>
-                                    <th>百科信息</th>
-                                </tr> 
-                                </thead>
-                                {% for iten in data %}
-                                <tbody id="tableData">
-                                    <!-- 数据将通过JavaScript填充 -->
-                                </tbody>
-                                {% endfor %}
-                            </table>
-                        </div>
-                    {% endif %}  
+                        
                     </div>
                 </div>
             </div>
