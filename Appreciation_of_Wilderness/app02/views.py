@@ -50,7 +50,7 @@ def proc(path):
     return response
 
 def upload(request):
-    return render(request, "./upload_image.html")
+    return render(request, "./user.html")
 
 # 注销
 def logout(request):
@@ -92,4 +92,4 @@ def img_proc(request):
                 f.write(data)
         result = proc(upload_url)
         
-    return render(request, 'upload_image.html', {'image_url':"/"+upload_url,'data': result.json()['result']})
+    return render(request, 'user.html', {'image_url':"/"+upload_url,'data': result.json()['result']})
