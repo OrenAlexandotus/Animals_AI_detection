@@ -17,6 +17,9 @@ def index(request):
 
     return render(request, "index.html")
 
+def user_management(request):
+    users = User.objects.all()
+    return render(request, 'user_management.html', {'users': users})
 
 def login_u(request):
     """
