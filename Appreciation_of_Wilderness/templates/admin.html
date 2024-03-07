@@ -1,0 +1,232 @@
+<!-- 
+创建时间：2024-2-29
+创建者：曾颂杰
+修改者：陈昱冰,张齐豫
+功能：图片上传、识别、显示的前端实现
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>识别测试admin</title>
+    <link rel="stylesheet" href="../static/layui/css/layui.css">
+    <style>
+        .btn1 {
+            margin-left: 25%;
+        }
+    </style>
+</head>
+
+<body class="layui-layout-body">
+    <div class="layui-layout layui-layout-admin">
+        <div class="layui-header">
+            <div class="layui-logo">
+                <h2>野趣识别 admin</h2>
+            </div>
+            <!-- 头部区域（可配合layui已有的水平导航） -->
+
+            <ul class="layui-nav layui-layout-right layui-nav layui-bg-green">
+                <li class="layui-nav-item">
+                    <a href="javascript:;">
+                        <img src="/static/media/{{ user.u_icon }}" class="layui-nav-img">
+                        {{ user }}
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="/baseinfo/">基本资料</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item"><a href="/logout/">退出</a></li>
+            </ul>
+        </div>
+
+        <div class="layui-side layui-bg-black">
+            <div class="layui-side-scroll">
+                <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+                <ul class="layui-nav layui-nav-tree" lay-filter="test">
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a class="" href="javascript:;">功能区域</a>
+                        <dl class="layui-nav-child" id="func">
+                            {# http://127.0.0.1:8000/sex_reg/ " target="kk" id="sex_reg #}
+                            {# http://127.0.0.1:8000/phiz_reg/" target="kk" id="phil_reg#}
+                            {# http://127.0.0.1:8000/face_detect/" target="kk" id="face_local#}
+                            {# http://127.0.0.1:8000/face_draw/" target="kk" id="deci_draw#}
+                            <dd><a href="javascript:;" class="layui-this">用户管理</a></dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="layui-body">
+            <!-- 内容主体区域 -->
+            <div class="list" style="padding: 15px; display: block">
+                <div class="layui-row">
+                    <div class="layui-col-md16">
+                        <form method="POST" action="/img_proc/" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <input type="file" id="file1" class="filepath" name="img" onchange="changepic1(this)"
+                                accept="image/png, image/jpeg, image/jpg">
+                            <img src="{{ image_url }}" id="show1" width="200">
+                            <button type="submit" class="layui-btn btn1">
+                                <i class="layui-icon">&#xe67c;识别图片</i>
+                            </button>
+                        </form>
+                        {% if data %}
+                        <div>
+                            <table class="layui-table">
+                                <colgroup>
+                                <col width="50">
+                                <col width="100">
+                                <col width="100">
+                                <col width="500">
+                                <col>
+                                </colgroup>
+                                <thead>
+                                <tr>
+                                    <th>序号</th>
+                                    <th>可能物种</th>
+                                    <th>可能性</th>
+                                    <th>百科信息</th>
+                                </tr> 
+                                </thead>
+                                {% for iten in data %}
+                                <tbody id="tableData">
+                                    <!-- 数据将通过JavaScript填充 -->
+                                </tbody>
+                                {% endfor %}
+                            </table>
+                        </div>
+                    {% endif %}  
+                    </div>
+                </div>
+            </div>
+            <div class="list" style="padding: 15px; display: none">
+                <div class="layui-row">
+                        <div class="layui-col-md4">
+                            <form method="POST" action="/phiz_reg/" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                
+                            </form>
+                        </div>
+                </div>
+            </div>
+            
+        </div>
+    <div class="layui-footer">
+        <!-- 底部固定区域 -->
+        欢迎来到野趣识别后台管理界面！
+    </div>
+
+    
+    <script type="text/javascript">
+        // 假设 data 是从后端传递到模板的 JSON 数据
+        let jsonData = {{ data|safe }};  // 使用 Django 模板标签将 data 变量传递到 JS
+        // 获取表格数据容器
+        var tableData = document.getElementById("tableData");
+        // 遍历 JSON 数据，将每个对象的属性值填充到表格中
+        for (var i = 0; i < jsonData.length; i++) {
+            var baike_info = jsonData[i].baike_info ? jsonData[i].baike_info.description : '无信息';
+            var row = "<tr>" +
+                        "<td>" + i + "</td>" +
+                        "<td>" + jsonData[i].name + "</td>" +
+                        "<td>" + (jsonData[i].score * 100).toFixed(2) + "%" + "</td>" +  // 置信度转换为百分比
+                        "<td>" + baike_info + "</td>" +
+                        "</tr>";
+            tableData.innerHTML += row;
+        }  
+        // layui表格渲染
+        layui.use('table', function(){
+                var table = layui.table;
+                table.init('table');
+        });    
+    </script>
+
+
+    <script>
+        function changepic1() {
+            var reads = new FileReader();
+            f = document.getElementById('file1').files[0];
+            reads.readAsDataURL(f);
+            reads.onload = function (e) {
+                document.getElementById('show1').src = this.result;
+
+            };
+            
+        }
+        function changepic2() {
+            var reads = new FileReader();
+            f = document.getElementById('file2').files[0];
+            reads.readAsDataURL(f);
+            reads.onload = function (e) {
+                document.getElementById('show2').src = this.result;
+
+            };
+        }
+        function changepic3() {
+            var reads = new FileReader();
+            f = document.getElementById('file3').files[0];
+            reads.readAsDataURL(f);
+            reads.onload = function (e) {
+                document.getElementById('show3').src = this.result;
+            };
+        }
+        function changepic4() {
+            var reads = new FileReader();
+            f = document.getElementById('file4').files[0];
+            reads.readAsDataURL(f);
+            reads.onload = function (e) {
+                document.getElementById('show4').src = this.result;
+            };
+        }
+
+
+    </script>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        function fileOrBlobToDataURL(obj, cb) {
+            let a = new FileReader();
+            a.readAsDataURL(obj);
+            a.onload = function (e) {
+                cb(e.target.result);
+            };
+        }
+
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            //获取点击事件的对象
+            $("#func dd").click(function () {
+                //获取要显示或隐藏的对象
+                var divShow = $(".layui-body").children('.list');
+                //判断当前对象是否被选中，如果没选中的话进入if循环
+                if ($(this).hasClass('layui-this')) {
+                    //获取当前对象的索引
+                    var index = $(this).index();
+                    console.log('当前元素索引》》》', index)
+                    //当前对象添加选中样式并且其同胞移除选中样式；
+                    $(this).addClass('layui-this').siblings('dd').removeClass('layui-this');
+                    //索引对应的div块显示
+                    $(divShow[index]).show();
+                    console.log(divShow[index])
+                    //索引对应的div块的同胞隐藏
+                    $(divShow[index]).siblings('.list').hide();
+                }
+                
+            });
+        });
+    </script>
+    <script src="../static/layui/layui.js"></script>
+    <script>
+        //JavaScript代码区域
+        layui.use('element', function () {
+            var element = layui.element;
+
+        });
+    </script>
+
+</body>
+
+</html>
