@@ -11,9 +11,9 @@ import requests
 
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect, HttpResponse
-
+from django.contrib.auth.decorators import login_required
 # Create your views here.
-
+@login_required
 def proc(path):
     '''
     功能：动物识别，这段代码是调用百度AI的动物识别接口，
@@ -49,9 +49,11 @@ def proc(path):
         print("Request failed.")
     return response
 
+@login_required
 def upload(request):
     return render(request, "./user.html")
-    
+
+@login_required
 def img_proc(request):
     '''
     功能：处理上传的图片的

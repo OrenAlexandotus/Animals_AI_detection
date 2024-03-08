@@ -10,7 +10,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from app01 import models
 from django.contrib import messages
-
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def index(request):
@@ -59,9 +59,11 @@ def register_u(request):
         messages.error(request, "用户名或密码为空！请重试")
         return render(request, "login_u.html")
     if password1 == password2:
-        User.objects.create_user(username=username, password=password1)
+        user = User.objects.create_user(username=username, password=password1)
+        if user is not None:
+            login(request, user)
         # 如果注册成功，重定向到初始化页面
-        return redirect("/user_init")  # 使用name来引用URL
+        return render(request, "user.html")
     else:
         messages.error(request, "两次密码不一致！请重试")
         return render(request, "login_u.html")
@@ -72,11 +74,13 @@ def login_a(request):
         return render(request, "login_a.html")
     name = request.POST.get("id")
     pwd = request.POST.get("pw")
-    if models.admin.objects.filter(id=name).first() is None:
-        return render(request, "login_a.html", {"error_msg": "未注册！请重试"})
-    elif models.admin.objects.filter(id=name).first().pw == pwd:
+    user = authenticate(request, username=name, password=pwd)
+    if user is not None and user.is_staff:
+        login(request, user)
         return redirect("/admin_init")
-    return render(request, "login_a.html", {"error_msg": "用户名或密码错误！请重试"})
+    else:
+        messages.error(request, "用户名或密码错误！请重试")
+        return render(request, 'login_a.html')
 
 # def find(request):
 #     if request.method == "GET":
@@ -91,12 +95,10 @@ def login_a(request):
 #         return redirect('http://127.0.0.1:8000/init')
 #     return render(request, 'login.html', {"error_msg": "原密码错误！请重试"})
 
-
+@login_required
 def admin_init(request):
-
     return render(request, "admin.html")
 
-
+@login_required
 def user_init(request):
-
     return render(request, "user.html")
