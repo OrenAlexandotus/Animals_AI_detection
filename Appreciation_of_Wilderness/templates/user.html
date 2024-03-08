@@ -13,6 +13,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>野趣识别</title>
     <link rel="stylesheet" href="../static/layui/css/layui.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/5.8.1/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/ionicons/4.5.6/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/admin-lte/2.4.10/css/AdminLTE.min.css">
     <style>
         .btn1 {
             margin-left: 25%;
@@ -45,12 +49,15 @@
                     <li class="layui-nav-item layui-nav-itemed">
                         <a class="" href="javascript:;">功能区域</a>
                         <dl class="layui-nav-child" id="func">
-                            <dd><a href="javascript:;" class="layui-this">物种识别</a></dd>
+                            <dd><a href="javascript:;">物种识别</a></dd>
                             <dd><a href="javascript:;">动物图鉴</a></dd>
                         </dl>
                     </li>
-                    <li class="layui-nav-item">
-                        <a class="" href="javascript:;">用户信息</a>
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a class="" href="javascript:;">个人空间</a>
+                        <dl class="layui-nav-child" id="user">
+                            <dd><a href="javascript:;">个人信息</a></dd>
+                        </dl>
                     </li>
                 </ul>
             </div>
@@ -58,6 +65,10 @@
 
         <div class="layui-body">
             <!-- 内容主体区域 -->
+            {% load static %}
+            <div class="list" style="display: block">
+                <img src="{% static 'images/welcome.jpg' %}" style="max-width:100%;overflow:hidden;margin-top: -65px;">
+            </div>
             <div class="list" style="padding: 15px; display: block">
                 <div class="layui-row">
                     <div class="layui-col-md-16">
@@ -128,16 +139,36 @@
                                 </div>
                             </div>
                         </div>
-
-
                     </div>
                 </div>
             </div>
+            <div class="list" style="padding: 15px; display: block">
+                <div class="message">
+                    <h3 style="display: inline-block">欢迎</h3>
+                    {% if uname %}
+                    <h3 style="display: inline-block; color: palevioletred">{{ uname }}</h3>
+                    {% endif %}
+                    <h3 style="display: inline-block">用户</h3><br>
+                    <h3 style="display: inline-block">完善个人资料</h3>
+                </div>
+                <div id="darkbannerwrap"></div>
+                <form method="POST" action="/baseinfo/" enctype="multipart/form-data" class="layui-form">
+                    {% csrf_token %}
+                    <hr class="hr15">
+                    请输入用户签名：<input type="text" name="sign" lay-verify="required" class="layui-input"
+                        style="width: 300px;">
+                    <hr class="hr15">
+                    请输入用户邮箱：<input type="email" name="email" lay-verify="required" class="layui-input"
+                        style="width: 300px;">
+                    <button type="submit" class="layui-btn btn1" id="test1" style="margin-left: 1px;margin-top: 50px;">
+                        <i class="layui-icon">&#xe67c;提交信息</i>
+                    </button>
+                </form>
+                <hr class="hr15">
+                <a href="/user_init/" class="layui-btn">返回主页</a>
+            </div>
         </div>
 
-            <div class="list" style="padding: 15px; display: block">
-                
-            </div>
 
         <div class="layui-footer">
             <!-- 底部固定区域 -->
@@ -219,6 +250,7 @@
             }
 
         </script>
+        
         <script type="text/javascript">
             $(function () {
                 //获取点击事件的对象
@@ -228,7 +260,7 @@
                     //判断当前对象是否被选中，如果没选中的话进入if循环
                     if ($(this).hasClass('layui-this')) {
                         //获取当前对象的索引
-                        var index = $(this).index();
+                        var index = $(this).index() + 1;
                         console.log('当前元素索引》》》', index)
                         //当前对象添加选中样式并且其同胞移除选中样式；
                         $(this).addClass('layui-this').siblings('dd').removeClass('layui-this');
@@ -238,7 +270,23 @@
                         //索引对应的div块的同胞隐藏
                         $(divShow[index]).siblings('.list').hide();
                     }
-
+                });
+                $("#user dd").click(function () {
+                    //获取要显示或隐藏的对象
+                    var divShow = $(".layui-body").children('.list');
+                    //判断当前对象是否被选中，如果没选中的话进入if循环
+                    if ($(this).hasClass('layui-this')) {
+                        //获取当前对象的索引
+                        var index = $(this).index() + 3;
+                        console.log('当前元素索引》》》', index)
+                        //当前对象添加选中样式并且其同胞移除选中样式；
+                        $(this).addClass('layui-this').siblings('dd').removeClass('layui-this');
+                        //索引对应的div块显示
+                        $(divShow[index]).show();
+                        console.log(divShow[index])
+                        //索引对应的div块的同胞隐藏
+                        $(divShow[index]).siblings('.list').hide();
+                    }
                 });
             });
         </script>
