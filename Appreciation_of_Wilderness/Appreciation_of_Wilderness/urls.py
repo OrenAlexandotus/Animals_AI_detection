@@ -19,7 +19,7 @@ from django.urls import path, include
 from app01 import views
 urlpatterns = [
     path('', views.index),
-    path('init', views.index),
+    path('init/', views.index),
     path('register_u/', views.register_u),
     path('login_u/', views.login_u),
     path('login_a/', views.login_a),
