@@ -1,3 +1,13 @@
+'''
+Author: OrenAlexandotus 1151825723@qq.com
+Date: 2024-03-08 09:57:00
+LastEditors: OrenAlexandotus 1151825723@qq.com
+LastEditTime: 2024-03-08 10:21:16
+FilePath: /Animals_AI_detection/Appreciation_of_Wilderness/app02/views.py
+Description: 
+
+Copyright (c) 2024 by OrenAlexandotus, All Rights Reserved. 
+'''
 #创建时间：2024-2-29
 #创建者：曾颂杰
 #修改者：陈昱冰,张齐豫
@@ -13,7 +23,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.decorators import login_required
 # Create your views here.
-@login_required
+
 def proc(path):
     '''
     功能：动物识别，这段代码是调用百度AI的动物识别接口，
@@ -53,7 +63,7 @@ def proc(path):
 def upload(request):
     return render(request, "./user.html")
 
-@login_required
+
 def img_proc(request):
     '''
     功能：处理上传的图片的
