@@ -63,7 +63,7 @@
                     <div class="layui-col-md16">
                         <form method="POST" action="/img_proc/" enctype="multipart/form-data">
                             {% csrf_token %}
-                            <input type="file" id="file1" class="filepath" name="img" onchange="changepic1(this)"
+                            <input type="file" id="file1" class="filepath layui-btn layui-btn-primary layui-btn-radius" name="img" onchange="changepic1(this)"
                                 accept="image/png, image/jpeg, image/jpg">
                             <img src="{{ image_url }}" id="show1" width="200">
                             <button type="submit" class="layui-btn btn1">
