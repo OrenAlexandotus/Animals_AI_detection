@@ -35,7 +35,7 @@
 
 队名：对对队
 
-https://github.com/OrenAlexandotus/duiduidui
+新项目地址：https://github.com/OrenAlexandotus/duiduidui
 
 
 # 0 知识学习
